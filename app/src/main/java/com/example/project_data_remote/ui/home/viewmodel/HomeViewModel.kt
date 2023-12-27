@@ -38,4 +38,16 @@ var kontakUIState: KontakUIState by mutableStateOf(KontakUIState.Loading)
             }
         }
     }
+    fun deleteKontak(id: Int) {
+        viewModelScope.launch {
+            try {
+                kontakRepository.deleteKontak(id)
+                // If deletion is successful, you might want to update your UI or perform other actions.
+            } catch (e: IOException) {
+               KontakUIState.Error
+            } catch (e: HttpException) {
+                KontakUIState.Error
+            }
+        }
+    }
 }

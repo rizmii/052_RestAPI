@@ -23,5 +23,5 @@ data class InsertUiState(
 fun Kontak.toInsertUiEvent():InsertUiEvent = InsertUiEvent(
     id = id,
     nama = nama,
-    
+
 )
