@@ -34,15 +34,23 @@ import com.example.project_data_remote.model.Kontak
 import com.example.project_data_remote.ui.home.viewmodel.KontakUIState
 
 @Composable
-fun HomeScreen(
+fun HomeStatus(
     kontakUIState: KontakUIState,
     retryAction: () -> Unit,
-    modifier: Modifier
+    modifier: Modifier,
+    onDetailClick: (Int) -> Unit,
+    onDeleteClick: (Kontak) -> Unit = {},
 ) {
     when (kontakUIState) {
         is KontakUIState.Loading -> OnLoading(modifier = Modifier.fillMaxSize())
 
-        is KontakUIState.Success -> KontakLayout(kontak = kontakUIState.kontak, modifier = Modifier.fillMaxWidth())
+        is KontakUIState.Success -> KontakLayout(kontak = kontakUIState.kontak, modifier = Modifier.fillMaxWidth(),
+            onDetailClick = {
+                onDetailClick(it.id)
+            },
+            onDeleteClick = {
+                onDeleteClick(it)
+            })
         is KontakUIState.Error ->
             OnError(retryAction, modifier = Modifier.fillMaxSize())
 
