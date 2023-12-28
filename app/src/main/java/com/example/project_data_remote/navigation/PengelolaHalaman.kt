@@ -2,13 +2,18 @@ package com.example.project_data_remote.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import com.example.project_data_remote.ui.home.screen.DestinasiHome
 import com.example.project_data_remote.ui.home.screen.HomeScreen
 import com.example.project_data_remote.ui.kontak.screen.DestinasiEntry
+import com.example.project_data_remote.ui.kontak.screen.EntryKontakScreen
+
+
 
 @Composable
 fun PengelolaHalaman(navController: NavHostController = rememberNavController()) {
+
     NavHost(
         navController = navController,
         startDestination = DestinasiHome.route,

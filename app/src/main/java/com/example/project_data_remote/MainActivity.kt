@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.project_data_remote.navigation.PengelolaHalaman
 import com.example.project_data_remote.ui.KontakApp
 import com.example.project_data_remote.ui.theme.Project_data_remoteTheme
 
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    KontakApp()
+                    PengelolaHalaman()
                 }
             }
         }
